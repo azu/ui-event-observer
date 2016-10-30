@@ -14,7 +14,7 @@ You can use a single `addEventListener` instead of multiple `addEventListener` f
 -   Provide Observer for `addEventListener`
     -   With `subscribe-ui-event`, instead of calling multiple `window.addEventListener('scroll', eventHandler)` by different components, call `subscribe(window, 'scroll', eventHandler)`.
     -   It will only add **a single** event listener and dispatch event to those who subscribe the event via EventEmitter.
--   Light weight: 5kb(gzip)
+-   Lightweight: 5kb(gzip)
 
 Related library:
 
