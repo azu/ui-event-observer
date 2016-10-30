@@ -16,7 +16,7 @@ function scrollBench(yPoints, next) {
 module.exports = function() {
     console.time("scroll-perf");
     console.profile("scroll-perf");
-    scrollBench([0, 100, 200, 300, 100, 400, 500, 600, 700, 800, 100, 900, 1000], function() {
+    scrollBench([0, 100, 200, 300, 100, 400, 500, 600, 700, 800, 100, 900, 1000, 5000], function() {
         console.profileEnd("scroll-perf");
         console.timeEnd("scroll-perf");
     });
