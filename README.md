@@ -1,4 +1,4 @@
-# ui-event-observer
+# ui-event-observer [![Build Status](https://travis-ci.org/azu/ui-event-observer.svg?branch=master)](https://travis-ci.org/azu/ui-event-observer)
 
 Provide performant/simple way to subscribe to browser DOM UI Events.
 
