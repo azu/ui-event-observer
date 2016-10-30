@@ -10,7 +10,7 @@
     "src/"
   ],
   "name": "ui-event-observer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide performant way to subscribe to browser UI Events.",
   "main": "lib/index.js",
   "scripts": {
