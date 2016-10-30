@@ -1,6 +1,6 @@
 // LICENSE : MIT
 "use strict";
 import UIEventObserver from "./UIEventObserver";
-module.exports = {
-    UIEventObserver
-};
+// singleton
+module.exports = new UIEventObserver();
+module.exports.UIEventObserver = UIEventObserver;

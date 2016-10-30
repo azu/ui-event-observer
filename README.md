@@ -24,8 +24,8 @@ Install with [npm](https://www.npmjs.com/):
 ## Example
 
 ```js
-import UIEventObserver from "UIEventObserver";
-const eventObserver = new UIEventObserver()
+// singleton
+const eventObserver = require("ui-event-observer");
 const handler = (event) => {
     // do something
 };
@@ -38,6 +38,12 @@ window.dispatchEvent(event);
 eventObserver.unsubscribe(window, "scroll", handler);
 // unsubscribe all
 eventObserver.unsubscribeAll();
+```
+
+You can also use `UIEventObserver` class:
+
+```js
+const UIEventObserver = require("ui-event-observer").UIEventObserver
 ```
 
 ## Usage
