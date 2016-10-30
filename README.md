@@ -4,6 +4,8 @@ Provide performant/simple way to subscribe to browser DOM UI Events.
 
 You can use a single `addEventListener` instead of multiple `addEventListener` for DOM UI Events by `UIEventObserver`.
 
+[Example project](example/) show that add 100 `"scroll"` event to `window`.
+
 ![addEventListener vs, UIEventObserver](https://monosnap.com/file/0L7z5AvZcuLKbCHxqB4sTU8TjRK0pk.png)
 
 - Left: 100x `addEventListener`
