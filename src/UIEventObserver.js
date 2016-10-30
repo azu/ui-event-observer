@@ -2,6 +2,10 @@
 "use strict";
 import DOMEventEmitter from "./DOMEventEmitter";
 import EventTargetMap from "./EventTargetMap";
+/**
+ * UIEventObserver class provide performant/simple way to subscribe to browser DOM UI Events.
+ * @public
+ */
 export default class UIEventObserver {
     constructor() {
         this._eventTargetMap = new EventTargetMap();
@@ -13,6 +17,7 @@ export default class UIEventObserver {
      * @param {Object} target target Element Node
      * @param {string} eventName event name
      * @param {Function} handler event handler
+     * @public
      */
     subscribe(target, eventName, handler) {
         let domEventEmitter = this._eventTargetMap.get([eventName, target]);
@@ -33,6 +38,7 @@ export default class UIEventObserver {
      * @param {Object} target target Element Node
      * @param {string} eventName event name
      * @param {Function} handler event handler
+     * @public
      */
     unsubscribe(target, eventName, handler) {
         const domEventEmitter = this._eventTargetMap.get([eventName, target]);
@@ -46,6 +52,7 @@ export default class UIEventObserver {
 
     /**
      * unsubscribe all events includes DOM Event
+     * @public
      */
     unsubscribeAll() {
         this._eventTargetMap.forEach((target, eventName) => {
@@ -60,6 +67,7 @@ export default class UIEventObserver {
      * @param {Object} targetElement
      * @param {string} domEventName
      * @returns {boolean}
+     * @public
      */
     hasListen(targetElement, domEventName,) {
         return this._eventHandlerMap.has([domEventName, targetElement]);

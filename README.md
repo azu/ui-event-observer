@@ -8,8 +8,63 @@ Install with [npm](https://www.npmjs.com/):
 
     npm install ui-event-observer
 
+## Example
+
+```js
+import UIEventObserver from "../src/UIEventObserver";
+const eventObserver = new UIEventObserver()
+const handler = (event) => {
+    // do something
+};
+// subscribe
+eventObserver.subscribe(window, "scroll", handler);
+// fire by interaction
+const event = new Event("scroll");
+window.dispatchEvent(event);
+// unsubscribe
+eventObserver.unsubscribe(window, "scroll", handler);
+// unsubscribe all
+eventObserver.unsubscribeAll();
+```
+
 ## Usage
 
+### `UIEventObserver`
+
+UIEventObserver class provide performant/simple way to subscribe to browser DOM UI Events.
+
+#### `subscribe(target: Object, eventName: string, handler: Function)`
+
+registers the specified `handler` on the `targetElement` it's called `domEventName`.
+
+**Parameters**
+
+-   `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
+-   `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
+-   `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
+
+#### `unsubscribe(target: Object, eventName: string, handler: Function)`
+
+removes the event `handler` previously registered with UIEventObserver#subscribe
+
+**Parameters**
+
+-   `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
+-   `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
+-   `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
+
+#### `unsubscribeAll()`
+
+unsubscribe all events includes DOM Event
+
+#### `hasListen(targetElement: Object, domEventName: string): boolean`
+
+**Parameters**
+
+-   `targetElement`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+-   `domEventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
+Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
 ## Changelog
 
@@ -27,16 +82,16 @@ Pull requests and stars are always welcome.
 
 For bugs and feature requests, [please create an issue](https://github.com/azu/ui-event-observer/issues).
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a pull request :D
 
 ## Author
 
-- [github/azu](https://github.com/azu)
-- [twitter/azu_re](https://twitter.com/azu_re)
+-   [github/azu](https://github.com/azu)
+-   [twitter/azu_re](https://twitter.com/azu_re)
 
 ## License
 
