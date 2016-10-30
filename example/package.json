@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "prebuild": "npm rm ui-event-observer && npm i",
+    "build": "webpack"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "ui-event-observer": "file:../"
+  }
+}

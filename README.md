@@ -6,14 +6,14 @@ You can use a single `addEventListener` instead of multiple `addEventListener` f
 
 ## Features
 
-- Provide Observer for `addEventListener`
-    - With `subscribe-ui-event`, instead of calling multiple `window.addEventListener('scroll', eventHandler)` by different components, call `subscribe(window, 'scroll', eventHandler)`.
-    - It will only add **a single** event listener and dispatch event to those who subscribe the event via EventEmitter.
-- Light weight: 5kb(gzip)
+-   Provide Observer for `addEventListener`
+    -   With `subscribe-ui-event`, instead of calling multiple `window.addEventListener('scroll', eventHandler)` by different components, call `subscribe(window, 'scroll', eventHandler)`.
+    -   It will only add **a single** event listener and dispatch event to those who subscribe the event via EventEmitter.
+-   Light weight: 5kb(gzip)
 
 Related library:
 
-- [yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.](https://github.com/yahoo/subscribe-ui-event "yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.")
+-   [yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.](https://github.com/yahoo/subscribe-ui-event "yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.")
 
 ## Install
 
@@ -24,7 +24,7 @@ Install with [npm](https://www.npmjs.com/):
 ## Example
 
 ```js
-import UIEventObserver from "../src/UIEventObserver";
+import UIEventObserver from "UIEventObserver";
 const eventObserver = new UIEventObserver()
 const handler = (event) => {
     // do something

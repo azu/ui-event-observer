@@ -12,14 +12,14 @@
   "name": "ui-event-observer",
   "version": "1.0.0",
   "description": "Provide performant way to subscribe to browser UI Events.",
-  "main": "lib/ui-event-observer.js",
+  "main": "lib/index.js",
   "scripts": {
     "test:sauce": "zuul -- test/*-test.js",
     "test:local": "zuul --local 8080 --ui mocha-bdd -- test/*-test.js",
     "build": "NODE_ENV=production babel src --out-dir lib --source-maps",
     "watch": "babel src --out-dir lib --watch --source-maps",
     "docs": "documentation build --access public --theme ./node_modules/documentation-markdown-api-theme/lib/index -f html -o out.md src/UIEventObserver.js && cat out.md | add-text-to-markdown README.md --section \"Usage\" --write; rm out.md",
-    "prepublish": "npm run --if-present build && npm run docs"
+    "prepublish": "npm run --if-present build"
   },
   "keywords": [
     "dom",
