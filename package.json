@@ -16,6 +16,7 @@
   "scripts": {
     "test:sauce": "zuul -- test/*-test.js",
     "test:local": "zuul --local 8080 --ui mocha-bdd -- test/*-test.js",
+    "test": "mocha test/",
     "build": "NODE_ENV=production babel src --out-dir lib --source-maps",
     "watch": "babel src --out-dir lib --watch --source-maps",
     "docs": "documentation build --access public --theme ./node_modules/documentation-markdown-api-theme/lib/index -f html -o out.md src/UIEventObserver.js && cat out.md | add-text-to-markdown README.md --section \"Usage\" --write; rm out.md",
@@ -48,6 +49,8 @@
     "documentation": "^4.0.0-beta11",
     "documentation-markdown-api-theme": "^1.0.2",
     "istanbul": "^0.4.5",
+    "jsdom": "9.8.3",
+    "jsdom-global": "2.1.0",
     "mocha": "^3.1.2",
     "power-assert": "^1.4.1",
     "zuul": "^3.11.1"
