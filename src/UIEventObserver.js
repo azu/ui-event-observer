@@ -13,7 +13,7 @@ export default class UIEventObserver {
     }
 
     /**
-     * registers the specified `handler` on the `targetElement` it's called `domEventName`.
+     * registers the specified `handler` on the `target` element it's called `eventName`.
      * @param {Object} target target Element Node
      * @param {string} eventName event name
      * @param {Function} handler event handler
@@ -51,7 +51,7 @@ export default class UIEventObserver {
     }
 
     /**
-     * unsubscribe all events includes DOM Event
+     * unsubscribe all events with DOM Event
      * @public
      */
     unsubscribeAll() {

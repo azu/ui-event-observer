@@ -4,7 +4,7 @@ Provide performant/simple way to subscribe to browser DOM UI Events.
 
 You can use a single `addEventListener` instead of multiple `addEventListener` for DOM UI Events by `UIEventObserver`.
 
-[Example project](example/) show that add 100 `"scroll"` event to `window`.
+[Example project](example/) show that add 100 `"scroll"` event handler to `window`.
 
 ![addEventListener vs, UIEventObserver](https://monosnap.com/file/0L7z5AvZcuLKbCHxqB4sTU8TjRK0pk.png)
 
@@ -13,14 +13,14 @@ You can use a single `addEventListener` instead of multiple `addEventListener` f
 
 ## Features
 
--   Provide Observer for `addEventListener`
-    -   With `UIEventObserver`, instead of calling multiple `window.addEventListener('scroll', eventHandler)` by different components, call `subscribe(window, 'scroll', eventHandler)`.
-    -   It will only add **a single** event listener and dispatch event to those who subscribe the event via EventEmitter.
--   Lightweight: 5kb(gzip)
+- Provide Observer for `addEventListener`
+  - With `UIEventObserver`, instead of calling multiple `window.addEventListener('scroll', eventHandler)` by different components, call `subscribe(window, 'scroll', eventHandler)`.
+  - It will only add **a single** event listener and dispatch event to those who subscribe the event via EventEmitter.
+- Lightweight: 5kb(gzip)
 
 Related library:
 
--   [yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.](https://github.com/yahoo/subscribe-ui-event "yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.")
+- [yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.](https://github.com/yahoo/subscribe-ui-event "yahoo/subscribe-ui-event: subscribe-ui-event provides an cross-browser and performant way to subscribe to browser UI Events.")
 
 ## Install
 
@@ -36,7 +36,7 @@ const eventObserver = require("ui-event-observer");
 const handler = (event) => {
     // do something
 };
-// subscribe
+// subscribe "scroll" event
 eventObserver.subscribe(window, "scroll", handler);
 // fire by interaction
 const event = new Event("scroll");
@@ -61,13 +61,13 @@ UIEventObserver class provide performant/simple way to subscribe to browser DOM 
 
 #### `subscribe(target: Object, eventName: string, handler: Function)`
 
-registers the specified `handler` on the `targetElement` it's called `domEventName`.
+registers the specified `handler` on the `target` element it's called `eventName`.
 
 **Parameters**
 
--   `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
--   `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
--   `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
+- `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
+- `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
+- `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
 
 #### `unsubscribe(target: Object, eventName: string, handler: Function)`
 
@@ -75,20 +75,20 @@ removes the event `handler` previously registered with UIEventObserver#subscribe
 
 **Parameters**
 
--   `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
--   `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
--   `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
+- `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
+- `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
+- `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
 
 #### `unsubscribeAll()`
 
-unsubscribe all events includes DOM Event
+unsubscribe all events with DOM Event
 
 #### `hasListen(targetElement: Object, domEventName: string): boolean`
 
 **Parameters**
 
--   `targetElement`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
--   `domEventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+- `targetElement`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+- `domEventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
@@ -108,16 +108,16 @@ Pull requests and stars are always welcome.
 
 For bugs and feature requests, [please create an issue](https://github.com/azu/ui-event-observer/issues).
 
-1.  Fork it!
-2.  Create your feature branch: `git checkout -b my-new-feature`
-3.  Commit your changes: `git commit -am 'Add some feature'`
-4.  Push to the branch: `git push origin my-new-feature`
-5.  Submit a pull request :D
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ## Author
 
--   [github/azu](https://github.com/azu)
--   [twitter/azu_re](https://twitter.com/azu_re)
+- [github/azu](https://github.com/azu)
+- [twitter/azu_re](https://twitter.com/azu_re)
 
 ## License
 

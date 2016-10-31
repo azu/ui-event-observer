@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/azu/ui-event-observer",
   "devDependencies": {
-    "add-text-to-markdown": "^1.0.3",
+    "add-text-to-markdown": "^2.0.0",
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-jsdoc-to-assert": "^4.0.0",
