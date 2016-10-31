@@ -83,7 +83,9 @@ removes the event `handler` previously registered with UIEventObserver#subscribe
 
 unsubscribe all events with DOM Event
 
-#### `hasListen(targetElement: Object, domEventName: string): boolean`
+#### `hasSubscriber(targetElement: Object, domEventName: string): boolean`
+
+if has a subscriber at least one, return true
 
 **Parameters**
 

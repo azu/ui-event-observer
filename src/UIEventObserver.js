@@ -64,12 +64,13 @@ export default class UIEventObserver {
     }
 
     /**
+     * if has a subscriber at least one, return true
      * @param {Object} targetElement
      * @param {string} domEventName
      * @returns {boolean}
      * @public
      */
-    hasListen(targetElement, domEventName,) {
+    hasSubscriber(targetElement, domEventName,) {
         return this._eventHandlerMap.has([domEventName, targetElement]);
     }
 

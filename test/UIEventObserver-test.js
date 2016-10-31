@@ -57,9 +57,9 @@ describe("UIEventObserver", () => {
             const handler = () => {
             };
             eventObserver.subscribe(window, "scroll", handler);
-            assert(eventObserver.hasListen(window, "scroll"));
+            assert(eventObserver.hasSubscriber(window, "scroll"));
             eventObserver.unsubscribe(window, "scroll", handler);
-            assert(eventObserver.hasListen(window, "scroll") === false);
+            assert(eventObserver.hasSubscriber(window, "scroll") === false);
         });
     });
     describe("#unsubscribeAll", () => {
@@ -70,9 +70,9 @@ describe("UIEventObserver", () => {
             eventObserver.subscribe(window, "resize", handler);
             eventObserver.subscribe(document.body, "scroll", handler);
             eventObserver.unsubscribeAll();
-            assert(eventObserver.hasListen(window, "scroll") === false);
-            assert(eventObserver.hasListen(window, "resize") === false);
-            assert(eventObserver.hasListen(document.body, "scroll") === false);
+            assert(eventObserver.hasSubscriber(window, "scroll") === false);
+            assert(eventObserver.hasSubscriber(window, "resize") === false);
+            assert(eventObserver.hasSubscriber(document.body, "scroll") === false);
         });
     });
 });
