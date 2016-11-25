@@ -59,7 +59,7 @@ const UIEventObserver = require("ui-event-observer").UIEventObserver
 
 UIEventObserver class provide performant/simple way to subscribe to browser DOM UI Events.
 
-#### `subscribe(target: Object, eventName: string, handler: Function)`
+#### `subscribe(target: Object, eventName: string, handler: Function): Function`
 
 registers the specified `handler` on the `target` element it's called `eventName`.
 
@@ -68,6 +68,21 @@ registers the specified `handler` on the `target` element it's called `eventName
 - `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
 - `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
 - `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
+
+Returns: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - unsubscribe handler
+
+#### `subscribeOnce(target: Object, eventName: string, handler: Function): Function`
+
+registers the specified `handler` on the `target` element it's called `eventName`.
+It is called at once difference from UIEventObserver#subscribe
+
+**Parameters**
+
+- `target`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - target Element Node
+- `eventName`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - event name
+- `handler`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - event handler
+
+Returns: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - unsubscribe handler
 
 #### `unsubscribe(target: Object, eventName: string, handler: Function)`
 
