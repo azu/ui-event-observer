@@ -70,22 +70,33 @@ describe("UIEventObserver", () => {
         });
     });
     describe("#subscribeOnce", () => {
-        context("when fire it once", () => {
-            it("should automatically unsubscribe", () => {
-                const called = [];
-                const handler = (event) => {
-                    called.push(event);
-                };
-                const unsubscribe = eventObserver.subscribeOnce(window, "scroll", handler);
-                assert(typeof unsubscribe === "function");
-                assert(called.length === 0);
-                // fire
-                window.dispatchEvent(new Event("scroll"));
-                assert(called.length === 1);
-                // fire twice, but is not called
-                window.dispatchEvent(new Event("scroll"));
-                assert(called.length === 1);
-            });
+        it("should return unsubscribe function", () => {
+            const called = [];
+            const handler = (event) => {
+                called.push(event);
+            };
+            const unsubscribe = eventObserver.subscribeOnce(window, "scroll", handler);
+            assert(typeof unsubscribe === "function");
+            unsubscribe();
+            // fire
+            const event = new Event("scroll");
+            window.dispatchEvent(event);
+            assert(called.length === 0);
+        });
+        it("should automatically unsubscribe", () => {
+            const called = [];
+            const handler = (event) => {
+                called.push(event);
+            };
+            const unsubscribe = eventObserver.subscribeOnce(window, "scroll", handler);
+            assert(typeof unsubscribe === "function");
+            assert(called.length === 0);
+            // fire
+            window.dispatchEvent(new Event("scroll"));
+            assert(called.length === 1);
+            // fire twice, but is not called
+            window.dispatchEvent(new Event("scroll"));
+            assert(called.length === 1);
         });
     });
     describe("#unsubscribe", () => {
