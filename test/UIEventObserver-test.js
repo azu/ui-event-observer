@@ -12,6 +12,23 @@ describe("UIEventObserver", () => {
         eventObserver.unsubscribeAll();
     });
     describe("#subscribe", () => {
+        context("return values", () => {
+            it("is unsubscribe function bind arguments", () => {
+                const called = [];
+                const handler = (event) => {
+                    called.push(event);
+                };
+                const unsubscribe = eventObserver.subscribe(window, "scroll", handler);
+                assert(typeof unsubscribe === "function");
+                assert(called.length === 0);
+                // unsubscribe
+                unsubscribe();
+                // fire
+                const event = new Event("scroll");
+                window.dispatchEvent(event);
+                assert(called.length === 0);
+            });
+        });
         context("target is document.body", () => {
             it("add handler is called when the event is fired", (done) => {
                 const handler = (event) => {
@@ -49,6 +66,25 @@ describe("UIEventObserver", () => {
                     1,
                     2
                 ]);
+            });
+        });
+    });
+    describe("#subscribeOnce", () => {
+        context("when fire it once", () => {
+            it("should automatically unsubscribe", () => {
+                const called = [];
+                const handler = (event) => {
+                    called.push(event);
+                };
+                const unsubscribe = eventObserver.subscribeOnce(window, "scroll", handler);
+                assert(typeof unsubscribe === "function");
+                assert(called.length === 0);
+                // fire
+                window.dispatchEvent(new Event("scroll"));
+                assert(called.length === 1);
+                // fire twice, but is not called
+                window.dispatchEvent(new Event("scroll"));
+                assert(called.length === 1);
             });
         });
     });

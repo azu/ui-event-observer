@@ -17,6 +17,7 @@ export default class UIEventObserver {
      * @param {Object} target target Element Node
      * @param {string} eventName event name
      * @param {Function} handler event handler
+     * @returns {Function} unsubscribe handler
      * @public
      */
     subscribe(target, eventName, handler) {
@@ -31,6 +32,26 @@ export default class UIEventObserver {
             target.addEventListener(eventName, handler);
         }
         domEventEmitter.on(handler);
+        return () => {
+            this.unsubscribe(target, eventName, handler);
+        }
+    }
+
+    /**
+     * registers the specified `handler` on the `target` element it's called `eventName`.
+     * It is called at once difference from UIEventObserver#subscribe
+     * @param {Object} target target Element Node
+     * @param {string} eventName event name
+     * @param {Function} handler event handler
+     * @returns {Function} unsubscribe handler
+     * @public
+     */
+    subscribeOnce(target, eventName, handler) {
+        const onceHandler = (event) => {
+            handler(event);
+            this.unsubscribe(target, eventName, onceHandler);
+        };
+        return this.subscribe(target, eventName, onceHandler);
     }
 
     /**
