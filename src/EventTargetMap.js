@@ -1,6 +1,6 @@
 // LICENSE : MIT
 "use strict";
-const MapLike = require("map-like");
+const {MapLike} = require("map-like");
 /**
  * EventTargetMap use `eventName` and `target` as a key.
  * It means that [eventName, target] tuple object as a key.
