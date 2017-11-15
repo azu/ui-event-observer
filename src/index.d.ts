@@ -11,7 +11,7 @@ export class UIEventObserver {
 
     unsubscribeAll(): void;
 }
-declare module default_ {
+export declare module UIEventObserver {
   export function hasSubscriber(target: any, domEventName: string): boolean;
 
   export function subscribe(target: any, eventName: string, handler: Function): Function;
@@ -22,4 +22,4 @@ declare module default_ {
 
   export function unsubscribeAll(): void;
 }
-export default default_;
+export default UIEventObserver;
