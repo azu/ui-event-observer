@@ -1,4 +1,4 @@
-export class UIEventObserver {
+declare class UIEventObserver {
     constructor();
 
     hasSubscriber(target: any, domEventName: string): boolean;
@@ -11,15 +11,6 @@ export class UIEventObserver {
 
     unsubscribeAll(): void;
 }
-export declare module UIEventObserver {
-  export function hasSubscriber(target: any, domEventName: string): boolean;
 
-  export function subscribe(target: any, eventName: string, handler: Function): Function;
-
-  export function subscribeOnce(target: any, eventName: string, handler: Function): Function;
-
-  export function unsubscribe(target: any, eventName: string, handler: Function): void;
-
-  export function unsubscribeAll(): void;
-}
-export default UIEventObserver;
+declare const eventObserver: UIEventObserver;
+export { eventObserver, UIEventObserver };

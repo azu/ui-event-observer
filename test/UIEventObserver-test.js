@@ -1,7 +1,8 @@
 // LICENSE : MIT
 "use strict";
 const assert = require("assert");
-import UIEventObserver from "../src/UIEventObserver";
+import { UIEventObserver } from "../src/";
+
 describe("UIEventObserver", () => {
     let eventObserver;
     beforeEach(() => {

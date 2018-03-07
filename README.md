@@ -32,7 +32,7 @@ Install with [npm](https://www.npmjs.com/):
 
 ```js
 // singleton
-const eventObserver = require("ui-event-observer");
+import { eventObserver } from "ui-event-observer";
 const handler = (event) => {
     // do something
 };
@@ -50,7 +50,7 @@ eventObserver.unsubscribeAll();
 You can also use `UIEventObserver` class:
 
 ```js
-const UIEventObserver = require("ui-event-observer").UIEventObserver
+import { UIEventObserver } from "ui-event-observer";
 ```
 
 ## Usage
