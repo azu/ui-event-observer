@@ -2,5 +2,8 @@
 "use strict";
 import UIEventObserver from "./UIEventObserver";
 // singleton
-module.exports = new UIEventObserver();
-module.exports.UIEventObserver = UIEventObserver;
+const eventObserver = new UIEventObserver();
+export {
+    eventObserver,
+    UIEventObserver
+};
