@@ -6,7 +6,7 @@ You can use a single `addEventListener` instead of multiple `addEventListener` f
 
 [Example project](example/) show that add 100 `"scroll"` event handler to `window`.
 
-![addEventListener vs, UIEventObserver](https://monosnap.com/file/0L7z5AvZcuLKbCHxqB4sTU8TjRK0pk.png)
+![addEventListener vs, UIEventObserver](./screenshot.png)
 
 - Left: 100x `addEventListener`
 - Right: 1 `UIEventObserver`
